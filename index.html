@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auwal ❤️ Maryam - Love Page</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated background hearts */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.8);
+            font-size: 20px;
+            animation: floatUp 6s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main content */
+        .main-content {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .love-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 800px;
+            width: 100%;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-heading {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #d63384;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .subtext {
+            font-size: 1.5rem;
+            color: #6c757d;
+            margin-bottom: 40px;
+            font-weight: 300;
+            animation: fadeIn 2s ease-out 0.5s both;
+        }
+
+        .highlight-text {
+            background: linear-gradient(45deg, #e91e63, #ff6b9d, #e91e63);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            animation: gradientShift 3s ease-in-out infinite;
+            text-shadow: 0 0 10px rgba(233, 30, 99, 0.3);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hearts-section {
+            margin: 40px 0;
+            animation: fadeIn 2s ease-out 1s both;
+        }
+
+        .heart-icon {
+            font-size: 3rem;
+            color: #e91e63;
+            margin: 0 15px;
+            display: inline-block;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .heart-icon:hover {
+            transform: scale(1.3);
+            filter: drop-shadow(0 0 20px #e91e63);
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            75% {
+                transform: scale(1.1);
+            }
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 1.1rem;
+            color: #6c757d;
+            animation: fadeIn 2s ease-out 1.5s both;
+        }
+
+        .glow-effect {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #e91e63, 0 0 20px #e91e63, 0 0 30px #e91e63;
+            }
+            to {
+                text-shadow: 0 0 20px #e91e63, 0 0 30px #e91e63, 0 0 40px #e91e63;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .main-heading {
+                font-size: 3rem;
+            }
+            
+            .subtext {
+                font-size: 1.2rem;
+            }
+            
+            .love-container {
+                padding: 40px 20px;
+                margin: 20px;
+            }
+            
+            .heart-icon {
+                font-size: 2.5rem;
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-heading {
+                font-size: 2.5rem;
+            }
+            
+            .subtext {
+                font-size: 1rem;
+            }
+            
+            .heart-icon {
+                font-size: 2rem;
+                margin: 0 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="love-container">
+            <h1 class="main-heading glow-effect">Auwal ❤️ Maryam</h1>
+            <p class="subtext">Forever Connected — <span class="highlight-text">ICT_$_SLT</span> 💫</p>
+            
+            <div class="hearts-section">
+                <i class="bi bi-heart-fill heart-icon" data-heart="1"></i>
+                <i class="bi bi-heart-fill heart-icon" data-heart="2"></i>
+                <i class="bi bi-heart-fill heart-icon" data-heart="3"></i>
+                <i class="bi bi-heart-fill heart-icon" data-heart="4"></i>
+                <i class="bi bi-heart-fill heart-icon" data-heart="5"></i>
+            </div>
+            
+            <footer class="footer">
+                Made with ❤️ by Auwal
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Floating hearts animation
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.color = `hsl(${Math.random() * 60 + 320}, 70%, 60%)`;
+            
+            document.getElementById('floatingHearts').appendChild(heart);
+            
+            // Remove heart after animation
+            setTimeout(() => {
+                if (heart.parentNode) {
+                    heart.parentNode.removeChild(heart);
+                }
+            }, 6000);
+        }
+
+        // Create floating hearts periodically
+        setInterval(createFloatingHeart, 800);
+
+        // Heart click effects
+        document.querySelectorAll('.heart-icon').forEach(heart => {
+            heart.addEventListener('click', function() {
+                // Add extra glow effect on click
+                this.style.filter = 'drop-shadow(0 0 30px #e91e63)';
+                this.style.transform = 'scale(1.5)';
+                
+                // Create burst effect
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const burstHeart = document.createElement('div');
+                        burstHeart.innerHTML = '💕';
+                        burstHeart.style.position = 'absolute';
+                        burstHeart.style.fontSize = '20px';
+                        burstHeart.style.color = '#e91e63';
+                        burstHeart.style.pointerEvents = 'none';
+                        burstHeart.style.left = this.offsetLeft + 'px';
+                        burstHeart.style.top = this.offsetTop + 'px';
+                        burstHeart.style.animation = 'floatUp 2s ease-out forwards';
+                        burstHeart.style.zIndex = '1000';
+                        
+                        document.body.appendChild(burstHeart);
+                        
+                        setTimeout(() => {
+                            if (burstHeart.parentNode) {
+                                burstHeart.parentNode.removeChild(burstHeart);
+                            }
+                        }, 2000);
+                    }, i * 100);
+                }
+                
+                // Reset after animation
+                setTimeout(() => {
+                    this.style.filter = '';
+                    this.style.transform = '';
+                }, 1000);
+            });
+        });
+
+        // Add some initial floating hearts
+        for (let i = 0; i < 5; i++) {
+            setTimeout(() => createFloatingHeart(), i * 200);
+        }
+
+        // Add sparkle effect on page load
+        window.addEventListener('load', function() {
+            const sparkles = ['✨', '💫', '⭐', '🌟'];
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.innerHTML = sparkles[Math.floor(Math.random() * sparkles.length)];
+                    sparkle.style.position = 'fixed';
+                    sparkle.style.fontSize = '20px';
+                    sparkle.style.color = '#ffd700';
+                    sparkle.style.pointerEvents = 'none';
+                    sparkle.style.left = Math.random() * 100 + 'vw';
+                    sparkle.style.top = Math.random() * 100 + 'vh';
+                    sparkle.style.animation = 'fadeIn 1s ease-out forwards';
+                    sparkle.style.zIndex = '1000';
+                    
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => {
+                        if (sparkle.parentNode) {
+                            sparkle.parentNode.removeChild(sparkle);
+                        }
+                    }, 2000);
+                }, i * 100);
+            }
+        });
+    </script>
+</body>
+</html>
